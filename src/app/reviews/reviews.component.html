@@ -1,0 +1,23 @@
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-md-4 mb-5" *ngFor="let r of reviews">
+  
+        <div class="card">
+          <div class="card-header">
+              
+              <div class="d-flex justify-content-center small text-warning mb-2 align-items-center" >
+                <h2><span class="align-middle">{{r.rating}}</span></h2>
+                <div class="bi-star-fill" *ngFor="let i of [].constructor(r.rating)"></div>
+              </div>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>{{r.comment}}</p>
+              <footer class="blockquote-footer"><cite title="Source Title">{{r.user}} </cite></footer>
+            </blockquote>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

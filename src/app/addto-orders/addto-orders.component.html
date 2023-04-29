@@ -1,0 +1,101 @@
+<!-- <app-address></app-address> -->
+<app-navbar></app-navbar>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{productdetail.image}}" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">SZN{{productdetail.id}}: BST-498</div>
+                <h1 class="display-5 fw-bolder">{{productdetail.name}}</h1>
+                <div class="fs-5 mb-5">
+                    <span class="text-decoration-line-through">{{productdetail.price+(productdetail.price/10)}}</span>
+                    <span>{{productdetail.price}}</span>
+                    <p class="lead">{{productdetail.category}}</p>
+                    <p class="lead">{{productdetail.description}}</p>
+
+                </div>
+            </div>
+            <!-- <div class="col-md-4"></div> -->
+        </div>
+        <div class="row mt-5" id="about-us">
+            <!-- <div class="col-2"></div> -->
+            <div class="col-10">
+              <h4 class="mb-3">Add your address</h4>
+              <form action="" class="mt-3" [formGroup]="neworderForm" (ngSubmit)="neworder()">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">Full name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" formControlName="name">
+                  <div class="invalid-feedback"> Valid name is required. </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Mobile</label>
+                    <input type="number" class="form-control" placeholder="" value="" required="" formControlName="mobile">
+                    <div class="invalid-feedback"> Valid mobile number is required. </div>
+                </div>
+        
+                <div class="mb-3">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="" formControlName="address">
+                  <div class="invalid-feedback"> Please enter your shipping address. </div>
+                </div>
+                <div class="mb-3">
+                    <label for="address2">Landmark <span class="text-muted">(Optional)</span></label>
+                    <input type="text" class="form-control" id="address2" placeholder="street or popular place" formControlName="landmark">
+                </div>
+               
+                <div class="mb-3">
+                  <label for="country">City</label>
+                            <select class="custom-select d-block w-100" required="" formControlName="city">
+                                <option value="">Choose...</option>
+                                <option>Trivandrum</option>
+                                <option>Kollam</option>
+                                <option>Pathanamthitta</option>
+                                <option>Kottayam</option>
+                                <option>Alappuzha</option>
+                                <option>Ernakulam</option>
+                                <option>Idukki</option>
+                                <option>Thrissur</option>
+                            </select>
+                  <div class="invalid-feedback"> Please select a valid country. </div>
+                </div>
+                <div class="mb-3">
+                  <label for="state">State</label>
+                  <select class="custom-select d-block w-100" id="state" required="" formControlName="state">
+                                  <option value="">Choose...</option>
+                                  <option>Kerala</option>
+                  </select>
+                  <div class="invalid-feedback"> Please provide a valid state. </div>
+                </div>
+                <div class="mb-3">
+                  <label for="zip">Pin</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required="" formControlName="pin">
+                  <div class="invalid-feedback"> Pin code required. </div>
+                </div>
+                <div class="mb-3">
+                    <label for="state">Payment</label>
+                    <select class="custom-select d-block w-100" id="state" required="" formControlName="payment">
+                                    <option value="">Choose...</option>
+                                    <option>Cash on delivary</option>
+                    </select>
+                    <div class="invalid-feedback"> Please select a valid Mode of Payment </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-outline-dark" type="submit" [disabled]="neworderForm.invalid">Done</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-2"></div>
+          </div>
+
+          <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">© 2017-2019 Storezone</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+
+

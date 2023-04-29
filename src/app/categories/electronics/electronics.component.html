@@ -1,0 +1,58 @@
+<!-- <p>electronics works!</p> -->
+
+<app-navbar></app-navbar>
+
+<div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+    <div class="carousel-item active">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+  
+      <div class="col mb-5" *ngFor="let p of products">
+        <div class="card h-100">
+            
+            <a (click)="redirectProductdetail(p.id)" class="card-link">
+              <img src="{{p.image}}" alt="Your Image" class="img-thumbnail">
+            </a>
+            
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">{{p.name}}</h5>
+                    <!-- Product reviews-->
+                    <div class="d-flex justify-content-center text-warning small mb-2">
+                        <div class="bi-star-fill"></div>  
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star"></div>
+                    </div>
+  
+                    <!-- Product price-->
+                    <span class="text-muted text-decoration-line-through">{{p.price+(p.price/10)}}</span>
+                    {{p.price}}
+                    <ul class="list-group list-group-flush text-center">
+                        <!-- <li class="list-group-item">{{p.price}}</li> -->
+                        <li class="list-group-item">{{p.category}}</li>
+                        <!-- <li class="list-group-item">{{p.description}}</li> -->
+                    </ul>
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+            </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <app-footer></app-footer>

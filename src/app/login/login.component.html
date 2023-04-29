@@ -1,0 +1,33 @@
+<section>
+  <form [formGroup]="loginform" (ngSubmit)="handlelogin()">
+      <div class="form-box">
+        <div class="form-value">
+    
+          <div class="form">
+            <h2>Login</h2>
+            <div class="inputbox">
+              <fa-icon [icon]="faUser" style="color: #fff;"></fa-icon>
+              <input type="username" required formControlName="username">
+              <label for="">Username</label>
+              <div class="form-text text-danger" *ngIf="username && username.invalid && username.touched">invalid username</div>
+            </div>
+            <div class="inputbox">
+              <fa-icon [icon]="faLock" style="color: #fff;"></fa-icon>
+              <input type="password" required formControlName="password">
+              <label for="">Password</label>
+              <div class="form-text text-danger" *ngIf="password && password.invalid && password.touched">invalid password</div>
+            </div>
+            <div class="forget">
+              <label for=""><input type="checkbox">Remember me <a href="">Forgot Password</a></label>
+               
+            </div>
+            <button type="submit" [disabled]="loginform.invalid">Log in</button>
+            <div class="register">
+              <p>Dont have a account? <button type="submit" (click)="redirectregister()">Register</button></p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+  </form>
+</section>

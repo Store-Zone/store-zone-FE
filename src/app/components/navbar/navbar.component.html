@@ -1,0 +1,44 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">StoreZone</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" (click)="redirectproductlist()" type="button">Home</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="redirectabout()" type="button">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><p class="dropdown-item">Options</p></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        
+                        <li><button class="dropdown-item" (click)="redirectelectronics()">Electronics</button></li>
+                        <li><button class="dropdown-item" (click)="redirectfashion()"> Fashion</button></li>
+                        <li><button class="dropdown-item" (click)="redirectgrooming()">Grooming</button></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-outline-dark me-2 mt-1 mb-1" type="submit" (click)="redirectcart()">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{cartcount}}</span>
+                </button>
+               <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ms-3" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <fa-icon [icon]="faCircleUser" style="color:black;"></fa-icon></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><button class="dropdown-item" >{{user}}</button></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><button class="dropdown-item" >Account</button></li>
+                        <li><button class="dropdown-item" >Wishlist</button></li>
+                        <li><button class="dropdown-item" (click)="redirectorders()">Orders</button></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><button class="dropdown-item" (click)="redirectlogin()">Signout</button></li>
+                    </ul>
+               </div>
+            </form>
+        </div>
+    </div>
+</nav>

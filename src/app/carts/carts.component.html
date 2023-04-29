@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 " >
+
+            <div class="col-md-7">
+                <div class="card mb-3" style="border-color: #fff;">
+                    <div class="row g-0" *ngFor="let cart of carts">
+                      <div class="col-md-4">
+                        <img src="{{cart.product.image}}" class="img-fluid rounded-start " alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{cart.product.name}}</h5>
+                          <p class="card-text">{{cart.product.description}}</p>
+                          <p class="card-text"><small class="text-body-secondary">added on {{cart.created_date}}</small></p>
+                          <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button" (click)="add_order(cart.product.id)">
+                                <i class="bi-cart-fill me-1"></i>
+                                Proceed to Buy
+                            </button>
+                            <button class="btn btn-outline-danger flex-shrink-0 ms-3" type="button" (click)="removecart(cart.id)">
+                                Remove from Cart
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                      <div style="height: 100px;"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <ul class="list-group mb-3 sticky-top"  >
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Your cart</span>
+                    </h4>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let cart of carts">
+                        <div>
+                            <h6 class="my-0">{{cart.product.name}}</h6>
+                            <small class="text-muted">{{cart.product.category}}</small>
+                        </div>
+                        <span class="text-muted"><fa-icon [icon]="faIndianRupee"></fa-icon>{{cart.product.price}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (INR)</span>
+                        <strong><fa-icon [icon]="faIndianRupee"></fa-icon>{{totalprice}}</strong>
+                    </li>
+                    <form class="card p-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Promo code">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-secondary">Redeem</button>
+                            </div>
+                        </div>
+                    </form>
+                  </ul>
+            </div>
+            <!-- <div class="col-md-4"><img class="card-img-top mb-5 mb-md-0" src="{{cart.product.image}}" alt="..." /></div>
+            <div class="col-md-4">
+                <div class="small mb-1">SKU: BST-498</div>
+                <h1 class="display-5 fw-bolder">{{cart.product.name}}</h1>
+                <div class="fs-5 mb-5">
+                    <span class="text-decoration-line-through">{{cart.product.price+(cart.product.price/10)}}</span>
+                    <span>{{cart.product.price}}</span>
+                </div>
+                <p class="lead">{{cart.product.description}}</p>
+                <div class="d-flex">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button" (click)="add_order()">
+                        <i class="bi-cart-fill me-1"></i>
+                        Proceed to Buy
+                    </button>
+                    <button class="btn btn-outline-danger flex-shrink-0 ms-3" type="button" (click)="removecart(cart.id)">
+                        Remove from Cart
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 order-md-2 mb-4 ">
+               
+            </div> -->
+            
+           
+        </div>
+    </div>
+   
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,24 @@
+
+
+main {
+	margin: 2em;
+    font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+}
+
+/* About section styles */
+#about-us {
+	background-color: #fff;
+	padding: 2em;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#about-us h1 {
+	margin-top: 0;
+}
+
+#about-us p {
+	margin-bottom: 1em;
+}

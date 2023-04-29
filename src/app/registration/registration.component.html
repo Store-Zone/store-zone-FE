@@ -1,0 +1,39 @@
+<section>
+    <form [formGroup]="registrationform" (ngSubmit)="registeruser()">
+        <div class="form-box">
+          <div class="form-value">
+      
+            <div class="form">
+              <h2>Registration</h2>
+              <div class="inputbox">
+                <fa-icon [icon]="faUser" style="color: #fff;"></fa-icon>
+                <input type="username" required formControlName="username">
+                <label for="">Username</label>
+                <div class="form-text text-danger" *ngIf="username && username.invalid && username.touched">invalid username</div>
+              </div>
+              <div class="inputbox">
+                <fa-icon [icon]="faEnvelope" style="color: #fff;"></fa-icon>
+                <input type="email" required formControlName="e_mail">
+                <label for="">Email</label>
+                <div class="form-text text-danger" *ngIf="e_mail && e_mail.invalid && e_mail.touched">invalid mail-id</div>
+              </div>
+              <div class="inputbox">
+                <fa-icon [icon]="faLock" style="color: #fff;"></fa-icon>
+                <input type="password" required formControlName="password">
+                <label for="">Password</label>
+                <div class="form-text text-danger" *ngIf="password && password.invalid && password.touched">invalid password</div>
+              </div>
+              <div class="forget">
+                <label for=""><input type="checkbox">Remember me <a href="http://localhost:4200/">Signin</a></label>
+                 
+              </div>
+              <button type="submit" [disabled]="registrationform.invalid">Register</button>
+              <!-- <div class="register">
+                <p>Dont have a account? <button href="">Register</button></p>
+              </div> -->
+            </div>
+      
+          </div>
+        </div>
+    </form>
+  </section>

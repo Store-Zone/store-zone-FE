@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center" *ngFor="let order of orders">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{order.product.image}}" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">SZN{{order.product.id}}: BST-00{{order.id}}</div>
+                <h1 class="display-5 fw-bolder">{{order.product.name}}</h1>
+                <div class="fs-5 mb-5">
+                    <span class="text-decoration-line-through">{{order.product.price+(order.product.price/10)}}</span>
+                    <span>{{order.product.price}}</span>
+                </div>
+                <p class="lead">{{order.product.description}}</p>
+                <p class="lead">{{order.user}}</p>
+                <p class="lead">{{order.address}}</p>
+                <p class="lead">{{order.payment}}</p>
+                
+            </div>
+            <div style="height: 100px;"></div>
+        </div>
+        
+    </div>
+</section>
+
+<app-footer></app-footer>
